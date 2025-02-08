@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import UserList from "../components/UserList";
+import Home from "../pages/Home/Home";
 
 const AppRouter = () => {
   return (
     <>
       {/* public route */}
       <Routes>
-        <Route path="/users" element={<UserList />} />
+        <Route path="/users" element={<Home />} />
       </Routes>
 
       {/* private route */}
