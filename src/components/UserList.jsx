@@ -10,16 +10,19 @@ const UserList = () => {
     dispatch(getAsyncUser());
   }, [dispatch]);
 
-  console.log(user);
-
   return (
     <div>
       <h1>users</h1>
-       <div>
-        {user.map((item) => (
-          <p key={item.id}>{item.name}</p>
-        ))}
-       </div>
+      <div>
+        {loading ? (
+          //! ERROR LOADING
+          <p>loading ...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          user.map((item) => <p key={item.id}>{item.name}</p>)
+        )}
+      </div>
     </div>
   );
 };

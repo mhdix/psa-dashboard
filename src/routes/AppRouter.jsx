@@ -1,16 +1,17 @@
-import { Router } from 'react-router-dom'
+import { Route, Routes } from "react-router-dom";
+import UserList from "../components/UserList";
 
 const AppRouter = () => {
   return (
-    <Router>
-        <ul>
-            <li>formDataToStreamfdasfdf</li>
-            <li>fdsfdsf</li>
-        </ul>
-        {/* public route */}
-        {/* private route */}
-    </Router>
-  );
-}
+    <>
+      {/* public route */}
+      <Routes>
+        <Route path="/users" element={<UserList />} />
+      </Routes>
 
-export default AppRouter
+      {/* private route */}
+    </>
+  );
+};
+
+export default AppRouter;

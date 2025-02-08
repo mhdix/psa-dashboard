@@ -17,7 +17,7 @@ const getAsyncUser = createAsyncThunk(
 
     } catch (error) {
       //! error message
-      return rejectWithValue(error.response.data || "so,thing went wrong");
+      return rejectWithValue(error.response.data.message || "somthing went wrong");
     }
   }
 );
@@ -30,14 +30,21 @@ const userSlice = createSlice({
     builder
       .addCase(getAsyncUser.pending, (state) => {
         state.loading = true;
+        state.error = null;
+        state.user = [];
+
       })
       .addCase(getAsyncUser.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload;
+        state.user = [];
+
       })
       .addCase(getAsyncUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
+        state.error = null;
+
       });
   },
 });

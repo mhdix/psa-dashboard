@@ -1,20 +1,17 @@
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import UserList from "./components/UserList";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
     <>
     {/* navbar */}
-      <ul>
-        <li>finishDraftdfs</li>
-        <li>jhg</li>
-        <li>hjg ghgv</li>
+      <ul >
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
       </ul>
       
-      <Routes>
-        <Route path="/users" element={<UserList />} />
-      </Routes>
+      <AppRouter />
     </>
   );
 }
